@@ -2,13 +2,13 @@ package koneksi;
 import java.sql.*;
 import javax.swing.JOptionPane;
 public class KoneksiDatabase {
-    Connection aam;
+    //Connection am;
     public static Connection BukaKoneksi(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection aam = DriverManager.getConnection("jdbc:mysql://localhost:8889/db_amrullah","root","root");
+            Connection aam = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_mahasiswa","java@localhost","password");
             return aam;
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
             return null;
         }
